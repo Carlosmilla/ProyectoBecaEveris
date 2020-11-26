@@ -10,10 +10,11 @@ import org.springframework.stereotype.Repository;
 
 import cl.everis.beca.proyecto.model.Libros;
 
-@Repository
 public interface Ilibros extends JpaRepository<Libros, Long>{
 
-	@Transactional
+	//@Transactional solo para guardar y actualizar y solo se utiliza en servicios.
+	
 	List<Libros> findByTitulo (String titulo);
 	
 }
+

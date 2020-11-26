@@ -13,7 +13,6 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 @Data
 @Entity
-@AllArgsConstructor
 @Table(name = "LIBROS")
 public class Libros {
 	
@@ -26,18 +25,22 @@ public class Libros {
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = LIBROS_SEQ)
     @SequenceGenerator(sequenceName = LIBROS_SEQ, allocationSize = 1, name = "LIBROS_SEQ")
 	private Long id;
+	
 	@Column
 	private String titulo;
+	
 	@Column
 	private String autor;
-	@Column
+	
+	@Column(name = "fecha_publicacion")
 	private String fechaPublicacion;
+	
 	@Column
 	private Integer existencias;
+	
 	@Column
 	private String editorial;
 	
-	public Libros() {}
 	
 	
 }
