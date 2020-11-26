@@ -9,7 +9,5 @@ public class Login {
 	
 	private String password;
 	
-	public Login() {
-	}
 }
 

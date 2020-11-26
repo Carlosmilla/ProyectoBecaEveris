@@ -18,9 +18,9 @@ export class LoginService {
     return this.http.post('http://localhost:8085/proyecto/login', login);
   }
 
-  setSession(session: Session){
+  setSession(session: any){
     localStorage.setItem('token', session.token);
-    /*this.setUserInSession(session.user);*/
+    //this.setUserInSession(session.user);
   }
 
   isActiveSesion(): boolean{

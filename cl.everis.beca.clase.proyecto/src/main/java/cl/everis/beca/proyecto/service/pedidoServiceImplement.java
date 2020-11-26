@@ -16,7 +16,7 @@ public class pedidoServiceImplement implements pedidoService{
 	
 	@SuppressWarnings("unchecked")
 	@Override
-	public List<Pedidos> buscarPorIdUsuario(Long UsuarioId) {
+	public List<Pedidos> buscarPorIdUsuario(Long UsuarioId, Long LibroId) {
 		return (List<Pedidos>) pedidoData.getOne(UsuarioId);
 	}
 

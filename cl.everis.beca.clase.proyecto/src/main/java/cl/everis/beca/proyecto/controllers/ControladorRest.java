@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
@@ -78,14 +79,7 @@ public class ControladorRest {
 	 * @return
 	 */
 	@PostMapping(value = "/agregarPedido", produces = "application/json")
-	public ResponseEntity<Pedidos> agregarPedido(@RequestParam String fechaSolicitud, @RequestParam String fechaDevolucion,
-			@RequestParam String penalizacion, @RequestParam Long LibroId, @RequestParam Long UsuarioId){
-		Pedidos pedido = new Pedidos();
-		pedido.setFechaSolicitud(fechaSolicitud);
-		pedido.setFechaDevolucion(fechaDevolucion);
-		pedido.setPenalizacion(penalizacion);
-		pedido.setLibroId(LibroId);
-		pedido.setUsuarioId(UsuarioId);
+	public ResponseEntity<Pedidos> agregarPedido(@RequestBody Pedidos pedido){
 		return new ResponseEntity<Pedidos>(pedidosData.save(pedido), HttpStatus.OK);
 	}
 	
@@ -98,6 +92,14 @@ public class ControladorRest {
 	public ResponseEntity<List<Pedidos>> buscarPedidoPorIdUsuario(@RequestParam Long UsuarioId) {
 		return new ResponseEntity<List<Pedidos>>(pedidoService.buscarPorIdUsuario(UsuarioId), HttpStatus.OK);
 	}
+	
+
+	@GetMapping(value = "/buscarPedidoPorId", produces = "application/json")
+	public ResponseEntity<Optional<Pedidos>> buscarPedidoPorId(@RequestParam Long id){
+		return new ResponseEntity<Optional<Pedidos>>(pedidosData.findById(id), HttpStatus.OK);
+	}
+	
+	
 	
 	/**
 	 * Eliminar el pedido por Id.

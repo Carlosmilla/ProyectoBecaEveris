@@ -21,11 +21,10 @@ export class LoginComponent implements OnInit {
   }
 
   iniciarSesion(){
-    console.log(this.login);
     this.loginService.login(this.login).subscribe(
       (respuesta) => {
         this.sesion = respuesta;
-        console.log(respuesta);
+        this.loginService.setUserInSession(this.sesion.user);
         this.router.navigate(['/menu/inicio']);        
       }, (error) => {
         console.log(error);

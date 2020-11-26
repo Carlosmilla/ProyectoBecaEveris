@@ -34,7 +34,7 @@ const routes: Routes = [
         component: InicioComponent
       },
       {
-        path: 'detalle',
+        path: 'detalle/:id',
         component: DetalleLibroComponent
       }, 
       {
@@ -42,7 +42,7 @@ const routes: Routes = [
         component: BusquedaComponent
       },
       {
-        path: 'libro',
+        path: 'libro/:id',
         component: LibroSolicitadoComponent
       },
       {

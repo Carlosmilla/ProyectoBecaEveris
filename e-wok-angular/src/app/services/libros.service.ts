@@ -7,10 +7,14 @@ import { Observable } from 'rxjs';
 })
 export class LibrosService {
 
-  baseUrl = 'http://localhost:8085/proyecto/verLibros';
+  baseUrl = 'http://localhost:8085/proyecto/';
   constructor(private http: HttpClient) { }
 
   getLibros(): Observable<any>{
-    return this.http.get(this.baseUrl);
+    return this.http.get(this.baseUrl+'verLibros');
+  }
+
+  getLibroById(id: number): Observable<any>{
+    return this.http.get(this.baseUrl+'/buscarLibroPorId?id='+id);
   }
 }

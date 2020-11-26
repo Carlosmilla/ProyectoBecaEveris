@@ -1,7 +1,7 @@
 <div class="container mt-5 mb-5">
     <div class="row">
         <div class="col-md-12">
-            <h1>Bienvenido José Alvarado</h1>
+            <h1>Bienvenido {{usuario.nombre}} {{usuario.apellido}}</h1>
             <input class="buscar icono-buscar sombra" type="text" placeholder="Buscar libro ..">
         </div>
     </div>
@@ -14,7 +14,7 @@
         <div class="col-md-3" *ngFor="let libro of libroL"> <!--Aquí va el ngFor-->
             <div class="contenedor-libros sombra mt-3">
                 <div class="libro">
-                    <a routerLink="/menu/detalle">
+                    <a [routerLink]="['/menu/detalle',libro.id]">
                         <img [src]='"assets/img/libros/"+libro.id+".jpg"' hight="100%" width="100%" alt="libro">
                     </a>
                 </div>

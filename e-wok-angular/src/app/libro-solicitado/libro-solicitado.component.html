@@ -2,13 +2,13 @@
     <div class="row">
         <div class="col-md-6 detalle-libro">
             <h3 class="mt-3">¡SOLICITADO!</h3>
-            <p>El Visitante | Stephen King</p>
+            <p>{{libro.titulo}} | {{libro.autor}}</p>
 
             <div class="detalles mt-5">
-                <p>Año: 1995</p>
-                <p>Editorial: Zig-Zag</p>
-                <p>Fecha Solicitud: 18-06-2020</p>
-                <p>Fecha Devolución: 18-07-2020</p>
+                <p>Año: {{libro.fechaPublicacion}}</p>
+                <p>Editorial: {{libro.editorial}}</p>
+                <p>Fecha Solicitud: {{pedido.fechaSolicitud}}</p>
+                <p>Fecha Devolución: {{pedido.fechaDevolucion}}</p>
             </div>
 
             <div class="id-retiro">
@@ -20,7 +20,7 @@
 
         </div>
         <div class="col-md-6 imagen-libro">
-            <img src="../../assets/img/libros/el-visitante.jpg" alt="imagen-libro">
+            <img [src]='"assets/img/libros/"+libro.id+".jpg"' alt="imagen-libro">
         </div>
     </div>
 </div>
