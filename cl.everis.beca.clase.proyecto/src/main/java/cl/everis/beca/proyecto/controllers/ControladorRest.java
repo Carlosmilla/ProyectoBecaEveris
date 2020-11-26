@@ -19,6 +19,8 @@ import cl.everis.beca.proyecto.interfaces.Ipedidos;
 import cl.everis.beca.proyecto.model.Libros;
 import cl.everis.beca.proyecto.model.Pedidos;
 import cl.everis.beca.proyecto.model.Usuario;
+import cl.everis.beca.proyecto.service.libroServiceImplement;
+import cl.everis.beca.proyecto.service.pedidoServiceImplement;
 
 @RestController
 public class ControladorRest {
@@ -32,6 +34,12 @@ public class ControladorRest {
 	
 	@Autowired
 	private IUsuarios usuarioData;
+	
+	@Autowired
+	private pedidoServiceImplement pedidoService;
+	
+	@Autowired
+	private libroServiceImplement libroService;
 	/**
 	 * Metodo de obtener todos los libros.
 	 * @return
@@ -48,11 +56,12 @@ public class ControladorRest {
 	 */
 	@GetMapping(value = "/buscarLibroPorTitulo", produces = "application/json")
 	public ResponseEntity<List<Libros>> buscarPorTitulo(@RequestParam String titulo){
-		return new ResponseEntity<List<Libros>>(librosData.buscarPorTtitulo(titulo), HttpStatus.OK);
+		return new ResponseEntity<List<Libros>>(librosData.findByTitulo(titulo), HttpStatus.OK);
 	}
 	
+	@GetMapping(value = "/buscarLibroPorId", produces = "application/json")
 	public ResponseEntity<Optional<Libros>> buscarLibroPorId(@RequestParam Long id){
-		return new ResponseEntity<Optional<Libros>>(librosData.buscarPorId(id), HttpStatus.OK);
+		return new ResponseEntity<Optional<Libros>>(libroService.buscarPorId(id), HttpStatus.OK);
 	}
 	
 	/**
@@ -83,7 +92,7 @@ public class ControladorRest {
 	 */
 	@GetMapping(value = "/buscarPedidos", produces = "application/json")
 	public ResponseEntity<List<Pedidos>> buscarPedidoPorIdUsuario(@RequestParam Long UsuarioId) {
-		return new ResponseEntity<List<Pedidos>>(pedidosData.buscarPorIdUsuario(UsuarioId), HttpStatus.OK);
+		return new ResponseEntity<List<Pedidos>>(pedidoService.buscarPorIdUsuario(UsuarioId), HttpStatus.OK);
 	}
 	
 	/**

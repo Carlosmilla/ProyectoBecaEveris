@@ -12,6 +12,5 @@ import cl.everis.beca.proyecto.model.Pedidos;
 @Repository
 public interface Ipedidos extends JpaRepository<Pedidos, Long> {
 	
-	@Transactional
-	List<Pedidos> buscarPorIdUsuario(Long UsuarioId);
+	
 }

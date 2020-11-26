@@ -12,10 +12,8 @@ import cl.everis.beca.proyecto.model.Libros;
 
 @Repository
 public interface Ilibros extends JpaRepository<Libros, Long>{
-	
+
 	@Transactional
-	List<Libros> buscarPorTtitulo(String titulo);
+	List<Libros> findByTitulo (String titulo);
 	
-	@Transactional
-	Optional<Libros> buscarPorId(Long id);
 }
