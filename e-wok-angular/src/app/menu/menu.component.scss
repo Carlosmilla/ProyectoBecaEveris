@@ -1,0 +1,42 @@
+.sombra{
+    -webkit-box-shadow: 0px 0px 35px -8px rgba(0,118,220,0.56);
+    -moz-box-shadow: 0px 0px 35px -8px rgba(0,118,220,0.56);
+    box-shadow: 0px 0px 35px -8px rgba(0,118,220,0.56);
+}
+
+.barra-navegacion{
+    height:  80px;
+    padding-left: 25px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.barra-navegacion img{
+    height: 63px;
+    width: 98px;
+    margin-top: 8px;
+    margin-left: 45px;
+}
+
+.barra-navegacion ul li{
+    list-style: none;
+    display: inline;
+}
+
+.barra-navegacion a{
+    text-decoration: none;
+    color: black;
+    margin-right: 45px;
+    margin-top: 22px;
+}
+
+.barra-navegacion a:hover{
+    color: #0076DC;
+}
+
+.icono-cerrar-sesion{
+    background: transparent url('../../assets/img/log-out.png') no-repeat center right;
+    background-size: 19px;
+    padding-right: 35px;
+    right: 35px;
+}

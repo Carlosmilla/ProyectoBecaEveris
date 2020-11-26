@@ -1,0 +1,42 @@
+<div class="container contenido-centro">
+    <div class="row mb-5">
+        <div class="col-md">
+            <h4>Editar perfil</h4>
+        </div>
+    </div>
+    <div class="row mb-5">
+        <div class="col-md-6">
+            <p>Editar correo electrónico</p>
+        </div>
+        <div class="col-md-6">
+            <input type="text" placeholder="Ingresa tu correo electrónico">
+        </div>
+    </div>
+    <div class="row mb-5">
+        <div class="col-md-6">
+            <p>Editar contraseña</p>
+        </div>
+        <div class="col-md-6">
+            <input type="password" placeholder="Ingresa tu nueva contraseña">
+            <input class="mt-5" type="password" placeholder="Reingresa tu nueva contraseña">
+        </div>
+    </div>
+
+    <div class="row mb-5">
+        <div class="col-md-6">
+            <p>Ingresa tu contraseña actual para confirmar</p>
+        </div>
+        <div class="col-md-6">
+            <input type="password" placeholder="Ingresa tu contraseña actual" required>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-6">
+            <router-outlet></router-outlet>
+        </div>
+        <div class="col-md-6">
+            <input class="boton-azul" type="button" value="GUARDAR CAMBIOS" routerLink="/menu/perfil/editar/editado">
+        </div>
+    </div>
+</div>
