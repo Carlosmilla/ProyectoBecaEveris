@@ -1,0 +1,66 @@
+.sombra{
+    -webkit-box-shadow: 0px 0px 35px -8px rgba(0,118,220,0.56);
+    -moz-box-shadow: 0px 0px 35px -8px rgba(0,118,220,0.56);
+    box-shadow: 0px 0px 35px -8px rgba(0,118,220,0.56);
+}
+
+.detalle-libro h3{
+    font-size: 48px;
+}
+
+.detalle-libro p{
+    font-style: italic;
+    border-bottom: 1px solid #0076DC;
+    padding-bottom: 20px;
+}
+
+.detalle-libro{
+    padding: 10px 10px 10px 10px;
+    height: 620px;
+}
+
+.imagen-libro{
+    padding: 10px 10px 10px 10px;
+    height: 620px;
+}
+
+.imagen-libro img{
+    height: 100%;
+    width: 100%;
+}
+
+.detalles p{
+    font-style: normal;
+    border-bottom: none;
+}
+
+.id-retiro{
+    text-align: center; 
+    padding: 15px 15px 15px 15px;
+    border: 1px solid grey;
+    height: 100px;
+}
+
+.id-retiro p{
+    border-bottom: none;
+    line-height: 5px;
+}
+
+.id-retiro span{
+    font-weight: bold;
+}
+
+.boton-rojo{
+    background-color: #E95C5C;
+    border: none;
+    width: 70%;
+    color: white;
+}
+
+.boton-rojo:hover{
+    background-color: white;
+    color: #E95C5C;
+    -webkit-box-shadow: 0px 0px 35px -8px rgba(233,92,92,1);
+    -moz-box-shadow: 0px 0px 35px -8px rgba(233,92,92,1);
+    box-shadow: 0px 0px 35px -8px rgba(233,92,92,1);
+}

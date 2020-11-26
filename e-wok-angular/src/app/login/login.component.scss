@@ -1,0 +1,43 @@
+.login-container{
+    height: 420px;
+    text-align: center;
+    margin-top: 150px;
+    margin-left: 390px;
+    border-radius: 5px;
+    -webkit-box-shadow: 0px 0px 35px -8px rgba(0,118,220,0.56);
+    -moz-box-shadow: 0px 0px 35px -8px rgba(0,118,220,0.56);
+    box-shadow: 0px 0px 35px -8px rgba(0,118,220,0.56);
+}
+
+.logo-ewok{
+    margin-top: 55px;
+    margin-bottom: 15px;
+}
+
+input{
+    margin-top: 20px;
+    width: 75%;
+}
+
+.campos{
+    border: 1px solid grey;
+    border-radius: 2px;
+    font-size: 11px;
+    padding: 5px 0px 5px 5px;
+}
+
+.boton-azul{
+    background-color: #0076DC;
+    border: none;
+    width: 70%;
+    color: white;
+}
+
+.boton-azul:hover{
+    background-color: white;
+    color: #0076DC;
+    -webkit-box-shadow: 0px 0px 35px -8px rgba(0,118,220,0.56);
+    -moz-box-shadow: 0px 0px 35px -8px rgba(0,118,220,0.56);
+    box-shadow: 0px 0px 35px -8px rgba(0,118,220,0.56);
+}
+

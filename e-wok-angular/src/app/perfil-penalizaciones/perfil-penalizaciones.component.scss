@@ -1,0 +1,52 @@
+.sombra{
+    -webkit-box-shadow: 0px 0px 35px -8px rgba(0,118,220,0.56);
+    -moz-box-shadow: 0px 0px 35px -8px rgba(0,118,220,0.56);
+    box-shadow: 0px 0px 35px -8px rgba(0,118,220,0.56);
+}
+
+.contenido-centro{
+    margin-left: 120px;
+    margin-top: 40px;
+}
+
+h4{
+    font-size: 2rem;
+    font-weight: 200;
+}
+
+.contenedor-libro{
+    padding: 7px 7px 7px 7px;
+    display: flex;
+    width: 390px;
+    justify-content: right;
+    height: 300px;
+    margin-left: 15px;
+}
+
+img{
+    margin-top: 35px;
+    width: 154px;
+    height: 214px;
+}
+
+.texto{
+    margin-left: 10px;
+}
+
+.texto span{
+    margin-bottom: none;
+    border-bottom: 1px solid #0076DC;
+    padding-bottom: 10px;
+    width: 30%;
+    font-weight: 200;
+}
+
+.texto .subtitulos{
+    font-style: italic;
+    font-size: 13px;
+}
+
+.borde-resolucion{
+    border: 1px dotted #0076DC;
+    padding: 2px 2px 2px 2px;
+}

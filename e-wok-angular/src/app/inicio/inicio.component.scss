@@ -1,0 +1,46 @@
+.sombra{
+    -webkit-box-shadow: 0px 0px 35px -8px rgba(0,118,220,0.56);
+    -moz-box-shadow: 0px 0px 35px -8px rgba(0,118,220,0.56);
+    box-shadow: 0px 0px 35px -8px rgba(0,118,220,0.56);
+}
+
+.container h1{
+    float: left;
+}
+
+.buscar{
+    border: 1px solid grey;
+    border-radius: 10px;
+    float: right;
+    width: 270px;
+    margin-top: 12px;
+    padding: 3px 0px 3px 15px;
+}
+
+.icono-buscar{
+    background: transparent url('../../assets/img/loupe.svg') no-repeat 90% center;
+    background-size: 20px;
+}
+
+h2{
+    font-weight: 200;
+}
+
+.contenedor-libros{
+    width: 200px;
+    text-align: center;
+    padding: 10px 10px 10px 10px;
+}
+
+.libro{
+    height: 280px;
+}
+
+.contenedor-libros p{
+    line-height: 9px;
+}
+
+.subtitulo{
+    font-style: italic;
+    font-size: 13px;
+}
