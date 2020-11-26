@@ -89,8 +89,8 @@ public class ControladorRest {
 	 * @return
 	 */
 	@GetMapping(value = "/buscarPedidos", produces = "application/json")
-	public ResponseEntity<List<Pedidos>> buscarPedidoPorIdUsuario(@RequestParam Long UsuarioId) {
-		return new ResponseEntity<List<Pedidos>>(pedidoService.buscarPorIdUsuario(UsuarioId), HttpStatus.OK);
+	public ResponseEntity<List<Pedidos>> buscarPedidoPorIdUsuario(@RequestParam Long UsuarioId, @RequestParam Long LibroId) {
+		return new ResponseEntity<List<Pedidos>>(pedidosData.findByLibroidAndUsuarioId(LibroId, UsuarioId), HttpStatus.OK);
 	}
 	
 
