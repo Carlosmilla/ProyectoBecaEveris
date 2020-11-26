@@ -26,7 +26,6 @@ export class LoginComponent implements OnInit {
       (respuesta) => {
         this.sesion = respuesta;
         console.log(respuesta);
-        this.loginService.setSession(this.sesion); 
         this.router.navigate(['/menu/inicio']);        
       }, (error) => {
         console.log(error);

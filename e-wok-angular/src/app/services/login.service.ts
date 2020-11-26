@@ -20,7 +20,7 @@ export class LoginService {
 
   setSession(session: Session){
     localStorage.setItem('token', session.token);
-    this.setUserInSession(session.user);
+    /*this.setUserInSession(session.user);*/
   }
 
   isActiveSesion(): boolean{
