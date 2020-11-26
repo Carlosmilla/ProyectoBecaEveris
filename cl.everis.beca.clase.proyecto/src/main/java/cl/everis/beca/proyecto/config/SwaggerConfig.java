@@ -1,6 +1,7 @@
 package cl.everis.beca.proyecto.config;
 
 import org.springframework.context.annotation.Bean;
+import static springfox.documentation.builders.PathSelectors.regex;
 import org.springframework.context.annotation.Configuration;
 
 import springfox.documentation.builders.PathSelectors;
@@ -18,8 +19,7 @@ public class SwaggerConfig {
 	public Docket apiDocket() {
 		return new Docket(DocumentationType.SWAGGER_2)
 				.select()
-				.apis(RequestHandlerSelectors.basePackage("cl.everis.beca.proyecto.controllers"))
-				.paths(PathSelectors.any())
+				.paths(regex("/proyecto.*"))
 				.build()
 				.apiInfo(getApiInfo());
 	}

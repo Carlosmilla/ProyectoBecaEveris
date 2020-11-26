@@ -11,9 +11,8 @@ import javax.persistence.Table;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
-
-@Entity
 @Data
+@Entity
 @AllArgsConstructor
 @Table(name = "LIBROS")
 public class Libros {
@@ -37,4 +36,8 @@ public class Libros {
 	private Integer existencias;
 	@Column
 	private String editorial;
+	
+	public Libros() {}
+	
+	
 }

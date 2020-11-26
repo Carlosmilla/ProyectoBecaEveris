@@ -15,7 +15,8 @@ import { PerfilPenalizacionesComponent } from './perfil-penalizaciones/perfil-pe
 import { PerfilEditarComponent } from './perfil-editar/perfil-editar.component';
 import { PerfilInicioComponent } from './perfil-inicio/perfil-inicio.component';
 import { PerfilEditadoComponent } from './perfil-editado/perfil-editado.component';
-
+import { HttpClientModule } from '@angular/common/http';
+import { FormsModule } from '@angular/forms';
 @NgModule({
   declarations: [
     AppComponent,
@@ -34,7 +35,9 @@ import { PerfilEditadoComponent } from './perfil-editado/perfil-editado.componen
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

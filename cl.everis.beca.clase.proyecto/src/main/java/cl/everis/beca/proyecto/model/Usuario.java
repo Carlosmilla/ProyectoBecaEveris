@@ -27,6 +27,7 @@ public class Usuario {
 	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = USUARIO_SEQ)
 	@SequenceGenerator(sequenceName = USUARIO_SEQ, allocationSize = 1, name = "USUARIO_SEQ")
 	private Long id;
+	
 	@Column
 	private String password;
 	@Column
@@ -35,5 +36,9 @@ public class Usuario {
 	private String apellido;
 	@Column
 	private String correo;
+	
+	public Usuario() {
+		
+	}
 
 }

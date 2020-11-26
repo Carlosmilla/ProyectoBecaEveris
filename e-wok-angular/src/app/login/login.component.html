@@ -6,10 +6,10 @@
             </div>
             <p>Login</p>
                 <div class="col">
-                    <input class="campos" type="email" placeholder="Correo electrónico" 
+                    <input class="campos" type="email" [(ngModel)] = "login.correo" placeholder="Correo electrónico" 
                     pattern=".+@.+" size="30" required>
-                    <input class="campos" type="password" placeholder="Contraseña" required>
-                    <input class="boton-azul" type="button" value="INGRESAR" routerLink='/menu/inicio'>
+                    <input class="campos" type="password" [(ngModel)] = "login.password" placeholder="Contraseña"   required>
+                    <input class="boton-azul" type="button" value="INGRESAR" (click) = "iniciarSesion()">
                 </div>
         </div>
     </div>
