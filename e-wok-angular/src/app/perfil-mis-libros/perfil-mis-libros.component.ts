@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Libro } from '../dto/libro';
+import { Pedido } from '../dto/pedido';
 import { PedidosService } from '../services/pedidos.service';
 
 @Component({
@@ -9,7 +10,7 @@ import { PedidosService } from '../services/pedidos.service';
 })
 export class PerfilMisLibrosComponent implements OnInit {
 
-  libroL = new Libro();
+  pedidosL = new Pedido();
   usuario;
   constructor(private pedidoService: PedidosService) { }
 
@@ -21,8 +22,7 @@ export class PerfilMisLibrosComponent implements OnInit {
   listLibro(){
     this.pedidoService.getPedidosByUserId(this.usuario.id).subscribe(
       (respuesta) => {
-        this.libroL = respuesta;
-        console.log(this.libroL);
+        this.pedidosL = respuesta;
       }, (error) => {
         console.log(error);
       }

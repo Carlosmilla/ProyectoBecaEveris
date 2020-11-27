@@ -101,8 +101,15 @@ public class ControladorRest {
 	
 	@GetMapping(value = "/buscarPedidosByUserId", produces = "application/json")
 	public ResponseEntity<List<Pedidos>> buscarPorIdUsuario(@RequestParam Long Usuarioid){
-		return new ResponseEntity<List<Pedidos>>(pedidoService.buscarPorIdUsuario(Usuarioid), HttpStatus.OK);
+		return new ResponseEntity<List<Pedidos>>(pedidosData.findByUsuarioId(Usuarioid), HttpStatus.OK);
 	}
+	
+	/**
+	 * @GetMapping(value = "/buscarPokemonPorTipo", produces = "application/json")
+	public ResponseEntity<List<Pokemon>> buscarPokemonPorTipo(@RequestParam String tipo) { // se solicita parametro String
+		return new ResponseEntity<List<Pokemon>>(pokeData.findByTipo(tipo), HttpStatus.OK); // se invoca metodo establecido en la interfaz
+	}
+	 */
 	
 	
 	

@@ -58,7 +58,6 @@ export class DetalleLibroComponent implements OnInit {
 
     this.pedidoService.addPedido(this.pedido).subscribe(
       (respuesta) => {
-        console.log(respuesta);
         console.log(respuesta.id);
         this.pedidoService.setPedidoInShow(parseInt(respuesta.id));
       },(error) =>{

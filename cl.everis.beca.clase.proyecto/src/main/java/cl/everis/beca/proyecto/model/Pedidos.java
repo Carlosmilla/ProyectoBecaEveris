@@ -43,7 +43,7 @@ public class Pedidos {
     private Long LibroId;
     
     @Column
-    private Long UsuarioId;
+    private Long usuarioId;
     
     public Pedidos() {}
 }

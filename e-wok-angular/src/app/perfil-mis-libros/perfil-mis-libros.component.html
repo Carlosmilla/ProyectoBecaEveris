@@ -5,18 +5,18 @@
         </div>
     </div>
     <div class="row">
-        <div class="col-md-3 contenido-centro">
-            <div class="contenedor-libro sombra">
+        <div class="col-md-3 contenido-centro" *ngFor="let pedido of pedidosL">
+            <div class="contenedor-libro sombra" >
                 <div class="libro">
-                    <img src="../../assets/img/libros/el-principito.jpg" alt="libro">
+                    <img [src]='"assets/img/libros/"+pedido.libroId+".jpg"' hight="100%" width="100%" alt="libro">
                 </div>
                 <div class="texto">
                     <div class="mb-3">
-                        <p>El Principito</p>
-                        <p class="subtitulos"><span>Antonie de Saint-Exúpery</span></p>
+                        <p> </p>
+                        <p class="subtitulos"><span> </span></p>
                     </div>
-                    <p class="subtitulos">Fecha de solicitud: 15-11-2020</p>
-                    <p class="subtitulos">Fecha de devolución: 15-12-2020</p>
+                    <p class="subtitulos">Fecha de solicitud: {{pedido.fechaSolicitud}}</p>
+                    <p class="subtitulos">Fecha de devolución: {{pedido.fechaDevolucion}}</p>
                     <p class="subtitulos">Cantidad de solicitudes: 1</p>
                 </div>
             </div>

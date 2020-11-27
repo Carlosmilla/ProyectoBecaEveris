@@ -13,6 +13,7 @@ export class InicioComponent implements OnInit {
 
   libroL = new Libro();
   usuario;
+  libroBuscado: string;
   constructor(private libroService: LibrosService) { }
 
   ngOnInit(): void {
@@ -29,6 +30,10 @@ export class InicioComponent implements OnInit {
         console.log(error);
       }
     );
+  }
+
+  buscarLibroPorNombre(){
+    
   }
 
 }

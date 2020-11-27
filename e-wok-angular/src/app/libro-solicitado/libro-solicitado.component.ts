@@ -59,7 +59,6 @@ export class LibroSolicitadoComponent implements OnInit {
     this.pedidoService.deletePedidoById(this.pedido.id).subscribe(
       (respuesta) => {
         this.pedido = respuesta;
-        console.log(this.pedido);
         this.router.navigate(['/menu/detalle', this.idL]);
       },
       (error) => {
