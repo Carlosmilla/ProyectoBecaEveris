@@ -14,7 +14,6 @@ import lombok.Data;
 
 @Entity
 @Data
-@AllArgsConstructor
 @Table(name = "PEDIDOS")
 public class Pedidos {
 	
@@ -30,20 +29,19 @@ public class Pedidos {
     @SequenceGenerator(sequenceName = PEDIDO_SEQ, allocationSize = 1, name = "PEDIDO_SEQ")
 	private Long id;
     
-    @Column
+    @Column(name = "fecha_solicitud")
 	private String fechaSolicitud;
     
-    @Column
+    @Column(name = "fecha_devolucion")
 	private String fechaDevolucion;
     
     @Column
 	private String penalizacion;
     
-    @Column
-    private Long LibroId;
+    @Column(name = "libro_id")
+    private Long libroId;
     
-    @Column
-    private Long UsuarioId;
-    
-    public Pedidos() {}
+    @Column(name = "usuario_id")
+    private Long usuarioId;
+
 }

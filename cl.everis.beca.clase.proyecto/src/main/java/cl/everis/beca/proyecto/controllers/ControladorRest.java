@@ -1,6 +1,7 @@
 package cl.everis.beca.proyecto.controllers;
 
 import java.util.List;
+
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -23,7 +24,6 @@ import cl.everis.beca.proyecto.model.Libros;
 import cl.everis.beca.proyecto.model.Pedidos;
 import cl.everis.beca.proyecto.model.Usuario;
 import cl.everis.beca.proyecto.service.libroServiceImplement;
-import cl.everis.beca.proyecto.service.pedidoServiceImplement;
 
 @RestController
 @RequestMapping("/proyecto")
@@ -39,9 +39,6 @@ public class ControladorRest {
 	
 	@Autowired
 	private IUsuarios usuarioData;
-	
-	@Autowired
-	private pedidoServiceImplement pedidoService;
 	
 	@Autowired
 	private libroServiceImplement libroService;
@@ -88,10 +85,17 @@ public class ControladorRest {
 	 * @param UsuarioId
 	 * @return
 	 */
+<<<<<<< Updated upstream
 	/**@GetMapping(value = "/buscarPedidos", produces = "application/json")
 	public ResponseEntity<List<Pedidos>> buscarPedidoPorIdUsuario(@RequestParam Long UsuarioId, @RequestParam Long LibroId) {
 		return new ResponseEntity<List<Pedidos>>(pedidosData.findByLibroidAndUsuarioId(LibroId, UsuarioId), HttpStatus.OK);
 	}**/
+=======
+	//@GetMapping(value = "/buscarPedidos", produces = "application/json")
+//	public ResponseEntity<List<Pedidos>> buscarPedidoPorIdUsuario(@RequestParam Long UsuarioId, @RequestParam Long LibroId) {
+//		return new ResponseEntity<List<Pedidos>>(pedidoService.findByLibroIdAndUsuarioId(LibroId, UsuarioId), HttpStatus.OK);
+//	}
+>>>>>>> Stashed changes
 	
 
 	@GetMapping(value = "/buscarPedidoPorId", produces = "application/json")
@@ -124,9 +128,9 @@ public class ControladorRest {
 	 * @return
 	 */
 	@PutMapping(value = "editarUsuario", produces = "application/json")
-	public ResponseEntity<Usuario> updateUsuario(@RequestParam Long id, Usuario user){
+	public ResponseEntity<Usuario> updateUsuario(@RequestParam Long id, String password){
 		Usuario userr = usuarioData.getOne(id);
-		userr.setPassword(user.getPassword());
+		userr.setPassword(password);
 		return new ResponseEntity<Usuario>(usuarioData.save(userr), HttpStatus.OK);
 	}
 	
