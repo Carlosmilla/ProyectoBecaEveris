@@ -13,7 +13,7 @@
             <ul>
                 <li class="icono-flecha-menu mt-3"><a routerLink="/menu/perfil/mis-libros">Mis libros</a></li>
                 <li class="icono-flecha-menu mt-3"><a routerLink="/menu/perfil/penalizaciones">Penalizaciones</a></li>
-                <li class="icono-flecha-menu mt-3"><a routerLink="/menu/perfil/editar">Editar perfil</a></li>
+                <li class="icono-flecha-menu mt-3"><a routerLink="/menu/perfil/editar" (click) = "rescatarId(usuario.id)">Editar perfil</a></li>
             </ul>
         </div>
         <router-outlet></router-outlet>

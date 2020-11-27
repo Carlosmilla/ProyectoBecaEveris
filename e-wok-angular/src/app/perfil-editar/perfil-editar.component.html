@@ -17,7 +17,7 @@
             <p>Editar contraseña</p>
         </div>
         <div class="col-md-6">
-            <input type="password" placeholder="Ingresa tu nueva contraseña">
+            <input type="password" placeholder="Ingresa tu nueva contraseña" [(ngModel)]="usuario.password">
             <input class="mt-5" type="password" placeholder="Reingresa tu nueva contraseña">
         </div>
     </div>
@@ -36,7 +36,7 @@
             <router-outlet></router-outlet>
         </div>
         <div class="col-md-6">
-            <input class="boton-azul" type="button" value="GUARDAR CAMBIOS" routerLink="/menu/perfil/editar/editado">
+            <input class="boton-azul" type="button" value="GUARDAR CAMBIOS" routerLink="/menu/perfil/editar/editado" (click) = editarUsuario()>
         </div>
     </div>
 </div>
