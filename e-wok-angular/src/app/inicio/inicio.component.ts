@@ -3,7 +3,6 @@ import { Libro } from '../dto/libro';
 import { Observable } from 'rxjs';
 import { User } from '../dto/User';
 import { LibrosService } from '../services/libros.service';
-import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-inicio',
@@ -13,9 +12,8 @@ import { Router } from '@angular/router';
 export class InicioComponent implements OnInit {
 
   libroL = new Libro();
-  name: String;
   usuario;
-  constructor(private libroService: LibrosService, private router: Router) { }
+  constructor(private libroService: LibrosService) { }
 
   ngOnInit(): void {
     this.usuario = JSON.parse(localStorage.getItem('usuario'));
@@ -31,18 +29,6 @@ export class InicioComponent implements OnInit {
         console.log(error);
       }
     );
-  }
-
-  findLibroByName() {
-    this.libroService.getLibroByName(this.name).subscribe(
-      (respuesta) => {
-        this.name = respuesta;
-        this.router.navigate(['menu/detalle/']);
-        console.log(this.name);
-      }, (error) => {
-        console.log(error);
-      }
-    )
   }
 
 }
