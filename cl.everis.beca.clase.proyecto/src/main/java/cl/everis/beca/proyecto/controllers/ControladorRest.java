@@ -124,9 +124,9 @@ public class ControladorRest {
 	 * @return
 	 */
 	@PutMapping(value = "editarUsuario", produces = "application/json")
-	public ResponseEntity<Usuario> updateUsuario(@RequestParam Long id, Usuario user){
+	public ResponseEntity<Usuario> updateUsuario(@RequestParam Long id, String password){
 		Usuario userr = usuarioData.getOne(id);
-		userr.setPassword(user.getPassword());
+		userr.setPassword(password);
 		return new ResponseEntity<Usuario>(usuarioData.save(userr), HttpStatus.OK);
 	}
 	
