@@ -14,12 +14,13 @@ import { User } from '../dto/User';
 export class LibroSolicitadoComponent implements OnInit {
   sub;
   idL: number;
+  idP: number;
   pedido = new Pedido();
   usuario = new User();
   libro = new Libro();
   constructor(
     private _Activatedroute: ActivatedRoute,
-    private _router: Router,
+    private router: Router,
     private libroService: LibrosService,
     private pedidoService: PedidosService
   ) {}
@@ -42,13 +43,28 @@ export class LibroSolicitadoComponent implements OnInit {
       }
     );
 
-    this.pedidoService.getPedidoById(this.idL, this.usuario.id).subscribe(
+    this.idP = parseInt(localStorage.getItem('pedido'));
+    this.pedidoService.getPedidoById(this.idP).subscribe(
       (respuesta) => {
         this.pedido = respuesta;
         console.log(this.pedido);
-      }, (error) => {
+      },
+      (error) => {
         console.log(error);
       }
-    )
+    );   
+  }
+
+  eliminarPedido(){
+    this.pedidoService.deletePedidoById(this.pedido.id).subscribe(
+      (respuesta) => {
+        this.pedido = respuesta;
+        console.log(this.pedido);
+        this.router.navigate(['/menu/detalle', this.idL]);
+      },
+      (error) => {
+        console.log(error);
+      }
+    );
   }
 }
