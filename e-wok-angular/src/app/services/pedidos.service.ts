@@ -20,4 +20,9 @@ export class PedidosService {
   getPedidoById(idL: number, idU: number): Observable<any>{
     return this.http.get(this.baseUrl+'buscarPedidos?idl='+idL+'&idU='+idU);
   }
+
+  getPedidosByUserId(idU: number): Observable<any>{
+    return this.http.get(this.baseUrl+'buscarPedidosByUserId?Usuarioid='+idU);
+
+  }
 }

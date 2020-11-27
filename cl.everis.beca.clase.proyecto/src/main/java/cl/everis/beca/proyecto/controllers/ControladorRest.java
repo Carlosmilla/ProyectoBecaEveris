@@ -88,15 +88,20 @@ public class ControladorRest {
 	 * @param UsuarioId
 	 * @return
 	 */
-	@GetMapping(value = "/buscarPedidos", produces = "application/json")
+	/**@GetMapping(value = "/buscarPedidos", produces = "application/json")
 	public ResponseEntity<List<Pedidos>> buscarPedidoPorIdUsuario(@RequestParam Long UsuarioId, @RequestParam Long LibroId) {
 		return new ResponseEntity<List<Pedidos>>(pedidosData.findByLibroidAndUsuarioId(LibroId, UsuarioId), HttpStatus.OK);
-	}
+	}**/
 	
 
 	@GetMapping(value = "/buscarPedidoPorId", produces = "application/json")
 	public ResponseEntity<Optional<Pedidos>> buscarPedidoPorId(@RequestParam Long id){
 		return new ResponseEntity<Optional<Pedidos>>(pedidosData.findById(id), HttpStatus.OK);
+	}
+	
+	@GetMapping(value = "/buscarPedidosByUserId", produces = "application/json")
+	public ResponseEntity<List<Pedidos>> buscarPorIdUsuario(@RequestParam Long Usuarioid){
+		return new ResponseEntity<List<Pedidos>>(pedidoService.buscarPorIdUsuario(Usuarioid), HttpStatus.OK);
 	}
 	
 	

@@ -6,5 +6,6 @@ import cl.everis.beca.proyecto.model.Pedidos;
 
 public interface pedidoService {
 
-	List<Pedidos> buscarPorIdUsuario(Long UsuarioId, Long LibroId);
+
+	List<Pedidos> buscarPorIdUsuario(Long UsuarioId);
 }

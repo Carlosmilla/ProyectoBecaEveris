@@ -7,6 +7,5 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import cl.everis.beca.proyecto.model.Pedidos;
 
 public interface Ipedidos extends JpaRepository<Pedidos, Long> {
-	
-	List<Pedidos> findByLibroidAndUsuarioId(Long libroId, Long usuarioId);
+
 }
