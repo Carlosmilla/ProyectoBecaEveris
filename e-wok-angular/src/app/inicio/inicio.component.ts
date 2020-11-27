@@ -3,6 +3,7 @@ import { Libro } from '../dto/libro';
 import { Observable } from 'rxjs';
 import { User } from '../dto/User';
 import { LibrosService } from '../services/libros.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-inicio',
@@ -14,7 +15,7 @@ export class InicioComponent implements OnInit {
   libroL = new Libro();
   usuario;
   libroBuscado: string;
-  constructor(private libroService: LibrosService) { }
+  constructor(private libroService: LibrosService, private router: Router) { }
 
   ngOnInit(): void {
     this.usuario = JSON.parse(localStorage.getItem('usuario'));
@@ -32,8 +33,11 @@ export class InicioComponent implements OnInit {
     );
   }
 
-  buscarLibroPorNombre(){
-    
+  buscarLibroPorNombre(f){
+    this.libroBuscado = f.controls['buscarLibro'].value;
+    this.router.navigate(['/menu/busqueda', this.libroBuscado]);
+
+
   }
 
 }

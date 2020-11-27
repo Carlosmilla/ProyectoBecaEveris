@@ -1,6 +1,5 @@
 package cl.everis.beca.proyecto.interfaces;
 
-import java.util.List;
 import java.util.Optional;
 
 import javax.transaction.Transactional;
@@ -14,7 +13,7 @@ public interface Ilibros extends JpaRepository<Libros, Long>{
 
 	//@Transactional solo para guardar y actualizar y solo se utiliza en servicios.
 	
-	List<Libros> findByTitulo (String titulo);
+	Optional<Libros> findByTitulo (String titulo);
 	
 }
 

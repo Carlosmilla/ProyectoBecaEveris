@@ -60,8 +60,8 @@ public class ControladorRest {
 	 * @return
 	 */
 	@GetMapping(value = "/buscarLibroPorTitulo", produces = "application/json")
-	public ResponseEntity<List<Libros>> buscarPorTitulo(@RequestParam String titulo){
-		return new ResponseEntity<List<Libros>>(librosData.findByTitulo(titulo), HttpStatus.OK);
+	public ResponseEntity<Optional<Libros>> buscarPorTitulo(@RequestParam String titulo){
+		return new ResponseEntity<Optional<Libros>>(librosData.findByTitulo(titulo), HttpStatus.OK);
 	}
 	
 	@GetMapping(value = "/buscarLibroPorId", produces = "application/json")

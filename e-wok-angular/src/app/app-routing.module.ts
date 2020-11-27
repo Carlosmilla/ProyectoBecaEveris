@@ -38,7 +38,7 @@ const routes: Routes = [
         component: DetalleLibroComponent
       }, 
       {
-        path: 'busqueda',
+        path: 'busqueda/:nombre',
         component: BusquedaComponent
       },
       {

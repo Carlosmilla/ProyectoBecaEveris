@@ -1,14 +1,15 @@
-<p>Mostrando resultados para: " "</p>
+<p>Mostrando resultados para: "{{nombreB}}"</p>
 <div class="row">
+    <div class="col-md-1"></div>
     <div class="col-md-3"> <!--Aquí va el ngFor-->
         <div class="contenedor-libros sombra mt-3">
-            <!--div class="libro">
-                <a [routerLink]="['/menu/detalle',libro.id]">
-                    <img [src]='"assets/img/libros/"+libro.id+".jpg"' hight="100%" width="100%" alt="libro">
+            <div class="libro">
+                <a [routerLink]="['/menu/detalle',libroL.id]">
+                    <img [src]='"assets/img/libros/"+libroL.id+".jpg"' hight="50%" width="50%" alt="libro">
                 </a>
             </div>
-            <p class="mt-2">{{libro.titulo}}</p>
-            <p class="subtitulo">{{libro.autor}}</p>-->
+            <p class="mt-2">{{libroL.titulo}}</p>
+            <p class="subtitulo">{{libroL.autor}}</p>
         </div>
     </div>
 </div> 

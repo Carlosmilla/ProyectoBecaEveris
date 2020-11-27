@@ -17,4 +17,8 @@ export class LibrosService {
   getLibroById(id: number): Observable<any>{
     return this.http.get(this.baseUrl+'/buscarLibroPorId?id='+id);
   }
+
+  getLibroByNombre(nombre: string): Observable<any>{
+    return this.http.get(this.baseUrl+'buscarLibroPorTitulo?titulo='+nombre);
+  }
 }
