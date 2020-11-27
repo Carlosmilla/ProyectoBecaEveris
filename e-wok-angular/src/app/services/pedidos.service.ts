@@ -17,12 +17,24 @@ export class PedidosService {
 
   }
 
-  getPedidoById(idL: number, idU: number): Observable<any>{
-    return this.http.get(this.baseUrl+'buscarPedidos?idl='+idL+'&idU='+idU);
+  getPedidoById(idP: number): Observable<any>{
+    return this.http.get(this.baseUrl+'buscarPedidoPorId?id='+idP);
   }
 
   getPedidosByUserId(idU: number): Observable<any>{
     return this.http.get(this.baseUrl+'buscarPedidosByUserId?Usuarioid='+idU);
 
+  }
+
+  deletePedidoById(idP: number): Observable<any>{
+    return this.http.delete(this.baseUrl+'eliminarPedidoById?id='+idP);
+  }
+
+  setPedidoInShow(pedido: number){
+    localStorage.setItem('pedido', pedido.toString());
+  }
+
+  getPedidoInShow(): boolean{
+    return localStorage.getItem('pedido') != null
   }
 }

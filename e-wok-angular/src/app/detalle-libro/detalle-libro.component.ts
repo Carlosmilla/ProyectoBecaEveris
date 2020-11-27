@@ -49,20 +49,24 @@ export class DetalleLibroComponent implements OnInit {
     this.pedido.libroId = this.idL;
     this.pedido.usuarioId = this.usuario.id;
     this.pedido.fechaSolicitud = this.datePipe.transform(this.fecha, 'dd-MM-yyyy');
-    this.diaD = this.fecha.getDay();
+    this.diaD = parseInt(this.datePipe.transform(this.fecha, 'dd'));
     this.mesD = this.fecha.getMonth()+2;
     this.yearD = this.fecha.getFullYear();
-    this.fechaD= "0"+this.diaD.toString()+"-"+this.mesD.toString()+"-"+this.yearD.toString();
+    this.fechaD= this.diaD+"-"+this.mesD.toString()+"-"+this.yearD.toString();
     this.pedido.fechaDevolucion= this.fechaD;
     this.pedido.penalizacion ="N";
 
     this.pedidoService.addPedido(this.pedido).subscribe(
       (respuesta) => {
         console.log(respuesta);
+        console.log(respuesta.id);
+        this.pedidoService.setPedidoInShow(parseInt(respuesta.id));
       },(error) =>{
         console.log(error);
       }
     )
+
+    
 
   }
 
